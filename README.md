@@ -22,3 +22,11 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+TODO
+
+* Get a working pokemon app to view basics
+* Unit test
+* Connect to sql and have a migration
+* Add a job
+* Create an API
