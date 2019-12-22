@@ -1,17 +1,18 @@
 <h1>Listing Pokemon</h1>
- 
+
 <table>
   <tr>
     <th>Name</th>
     <th>Number</th>
     <th></th>
   </tr>
- 
+
   <% @pokemon.each do |pokemon| %>
     <tr>
       <td><%= pokemon.name %></td>
       <td><%= pokemon.number %></td>
       <td><%= link_to 'Show', pokemon_path(pokemon) %></td>
+      <td><%= link_to 'Edit', edit_pokemon_path(pokemon) %></td>
     </tr>
   <% end %>
 </table>

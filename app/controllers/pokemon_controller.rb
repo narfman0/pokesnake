@@ -13,6 +13,19 @@ class PokemonController < ApplicationController
     end
   end
 
+  def update
+    @pokemon = Pokemon.find(params[:id])
+    if @pokemon.update(pokemon_params)
+      redirect_to @pokemon
+    else
+      render 'edit'
+    end
+  end
+
+  def edit
+    @pokemon = Pokemon.find(params[:id])
+  end
+
   def index
     @pokemon = Pokemon.all
   end
