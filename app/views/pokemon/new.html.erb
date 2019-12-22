@@ -1,5 +1,18 @@
 <h1>New Pokemon</h1>
 <%= form_with scope: :pokemon, url: pokemon_index_path, local: true do |form| %>
+  <% if @pokemon.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@pokemon.errors.count, "error") %> prohibited
+        this pokemon from being saved:
+      </h2>
+      <ul>
+        <% @pokemon.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <p>
     <%= form.label :name %><br>
     <%= form.text_field :name %>

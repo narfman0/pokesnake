@@ -1,11 +1,16 @@
 # pokemon controller
 class PokemonController < ApplicationController
-  def new; end
+  def new
+    @pokemon= Pokemon.new
+  end
 
   def create
     @pokemon = Pokemon.new(pokemon_params)
-    @pokemon.save
-    redirect_to @pokemon
+    if @pokemon.save
+      redirect_to @pokemon
+    else
+      render 'new'
+    end
   end
 
   def index
