@@ -1,7 +1,19 @@
 # pokemon controller
 class PokemonController < ApplicationController
+  def index
+    @pokemon = Pokemon.all
+  end
+
+  def show
+    @pokemon = Pokemon.find(params[:id])
+  end
+
   def new
     @pokemon= Pokemon.new
+  end
+
+  def edit
+    @pokemon = Pokemon.find(params[:id])
   end
 
   def create
@@ -22,16 +34,11 @@ class PokemonController < ApplicationController
     end
   end
 
-  def edit
+  def destroy
     @pokemon = Pokemon.find(params[:id])
-  end
+    @pokemon.destroy
 
-  def index
-    @pokemon = Pokemon.all
-  end
-
-  def show
-    @pokemon = Pokemon.find(params[:id])
+    redirect_to pokemon_index_path
   end
 
   private

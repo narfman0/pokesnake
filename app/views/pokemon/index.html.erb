@@ -13,6 +13,9 @@
       <td><%= pokemon.number %></td>
       <td><%= link_to 'Show', pokemon_path(pokemon) %></td>
       <td><%= link_to 'Edit', edit_pokemon_path(pokemon) %></td>
+      <td><%= link_to 'Destroy', pokemon_path(pokemon),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </table>
