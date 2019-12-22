@@ -1,32 +1,22 @@
-# README
+# pokesnake
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app crawls (hint: snakes crawl) various pokemon (hint: the first 4 letters
+of pokemon are poke) websites to populate a filter friendly table catered to
+certain versions of pokemon.
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+Run the test suite with `rails test`, and assuming this passes, run the app
+server with: `rails server`. Navigate to localhost:3000 in your browser,
+and voila!
 
-* System dependencies
+hint: this app is basically useless in its current form :)
 
-* Configuration
+## TODO
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-TODO
-
-* Get a working pokemon app to view basics
-* Unit test
-* Connect to sql and have a migration
+* Syntax highlighting/lint
+* Integration test w/ fixture
+* SQL many to many
 * Add a job
+* Add list of pokemon frontend with filter by type
 * Create an API
