@@ -1,6 +1,6 @@
+# pokemon controller
 class PokemonController < ApplicationController
-  def new
-  end
+  def new; end
 
   def create
     @pokemon = Pokemon.new(pokemon_params)
@@ -17,7 +17,8 @@ class PokemonController < ApplicationController
   end
 
   private
-    def pokemon_params
-      params.require(:pokemon).permit(:number, :name)
-    end
+
+  def pokemon_params
+    params.require(:pokemon).permit(:number, :name)
+  end
 end

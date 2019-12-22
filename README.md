@@ -14,7 +14,6 @@ hint: this app is basically useless in its current form :)
 
 ## TODO
 
-* Syntax highlighting/lint
 * Integration test w/ fixture
 * SQL many to many
 * Add a job
