@@ -14,6 +14,7 @@ hint: this app is basically useless in its current form :)
 
 ## TODO
 
+* Complete tutorial
 * Integration test w/ fixture
 * SQL many to many
 * Add a job
