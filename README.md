@@ -14,9 +14,8 @@ hint: this app is basically useless in its current form :)
 
 ## TODO
 
-* Complete tutorial
-* Integration test w/ fixture
 * SQL many to many
+* Integration test w/ fixture
 * Add a job
 * Add list of pokemon frontend with filter by type
 * Create an API
