@@ -1,0 +1,53 @@
+normal:
+  name: Normal
+
+fighting:
+  name: Fighting
+
+flying:
+  name: Flying
+
+poison:
+  name: Poison
+
+ground:
+  name: Ground
+
+rock:
+  name: Rock
+
+bug:
+  name: Bug
+
+ghost:
+  name: Ghost
+
+steel:
+  name: Steel
+
+fire:
+  name: Fire
+
+water:
+  name: Water
+
+grass:
+  name: Grass
+
+electric:
+  name: Electric
+
+psychic:
+  name: Psychic
+
+ice:
+  name: Ice
+
+dragon:
+  name: Dragon
+
+dark:
+  name: Dark
+
+fairy:
+  name: Fairy

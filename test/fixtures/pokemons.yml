@@ -1,9 +1,29 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+bulbasaur:
+  number: 1
+  name: Bulbasaur
+  types: grass, poison
 
-one:
-  number: 
-  name: MyString
+ivysaur:
+  number: 2
+  name: Ivysaur
+  types: grass, poison
 
-two:
-  number: 
-  name: MyString
+venusaur:
+  number: 3
+  name: Venusaur
+  types: grass, poison
+
+charmander:
+  number: 4
+  name: Charmander
+  types: fire
+
+charmeleon:
+  number: 5
+  name: Charmeleon
+  types: fire
+
+charizard:
+  number: 6
+  name: Charizard
+  types: fire, flying
