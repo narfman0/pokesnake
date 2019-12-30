@@ -8,5 +8,12 @@
   <%= @pokemon.number %>
 </p>
 
+<p>
+  <strong>Types:</strong>
+  <% @pokemon.types.each do |type| %>
+    <%= type.name  =%>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_pokemon_path(@pokemon) %> |
 <%= link_to 'Back', pokemon_index_path %>

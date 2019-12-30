@@ -15,21 +15,23 @@
       </ul>
     </div>
   <% end %>
- 
+
   <p>
     <%= form.label :name %><br>
     <%= form.text_field :name %>
   </p>
- 
+
   <p>
     <%= form.label :number %><br>
     <%= form.text_area :number %>
   </p>
- 
+
+  <%= form.collection_check_boxes :types, Type.all, :id, :name %>
+
   <p>
     <%= form.submit %>
   </p>
- 
+
 <% end %>
- 
+
 <%= link_to 'Back', pokemon_index_path %>

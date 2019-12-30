@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # pokemon controller
 class PokemonController < ApplicationController
   def index
@@ -9,7 +11,7 @@ class PokemonController < ApplicationController
   end
 
   def new
-    @pokemon= Pokemon.new
+    @pokemon = Pokemon.new
   end
 
   def edit
@@ -19,6 +21,7 @@ class PokemonController < ApplicationController
   def create
     @pokemon = Pokemon.new(pokemon_params)
     if @pokemon.save
+      @pokemon.type_ids = params[:pokemon].delete(:types)
       redirect_to @pokemon
     else
       render 'new'
@@ -27,6 +30,7 @@ class PokemonController < ApplicationController
 
   def update
     @pokemon = Pokemon.find(params[:id])
+    @pokemon.type_ids = params[:pokemon].delete(:types)
     if @pokemon.update(pokemon_params)
       redirect_to @pokemon
     else
@@ -44,6 +48,6 @@ class PokemonController < ApplicationController
   private
 
   def pokemon_params
-    params.require(:pokemon).permit(:number, :name)
+    params.require(:pokemon).permit(:number, :name, type_ids: [])
   end
 end

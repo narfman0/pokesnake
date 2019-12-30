@@ -4,13 +4,18 @@
   <tr>
     <th>Name</th>
     <th>Number</th>
-    <th></th>
+    <th>Types</th>
   </tr>
 
   <% @pokemon.each do |pokemon| %>
     <tr>
       <td><%= pokemon.name %></td>
       <td><%= pokemon.number %></td>
+      <td>
+      <% pokemon.types.each do |type| %>
+        <%= type.name  =%>
+      <% end %>
+      </td>
       <td><%= link_to 'Show', pokemon_path(pokemon) %></td>
       <td><%= link_to 'Edit', edit_pokemon_path(pokemon) %></td>
       <td><%= link_to 'Destroy', pokemon_path(pokemon),

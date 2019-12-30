@@ -23,6 +23,8 @@
     <%= form.text_area :number %>
   </p>
 
+  <%= form.collection_check_boxes :types, Type.all, :id, :name %>
+
   <p>
     <%= form.submit %>
   </p>
