@@ -14,6 +14,11 @@ hint: this app is basically useless in its current form :)
 
 ## TODO
 
-* Add a job
-* Add list of pokemon frontend with filter by type
-* Create an API
+* Add a job (populate db)
+* Create an API, return pokemon filtered by type
+
+## License
+
+Please see LICENSE for associated license.
+
+Copyright 2019 Jon Robison All Rights Reserved
