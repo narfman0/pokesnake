@@ -45,6 +45,11 @@ class PokemonController < ApplicationController
     redirect_to pokemon_index_path
   end
 
+  def update_job
+    PokemonUpdateJob.perform_now
+    redirect_to pokemon_index_path
+  end
+
   private
 
   def pokemon_params

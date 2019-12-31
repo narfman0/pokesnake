@@ -11,12 +11,21 @@ class PokemonUpdateJob < ApplicationJob
 
   def perform(*_args)
     number = Pokemon.count + 1
-    pokemon_json = request_pokemon_info(number)
-    name = pokemon_json['name']
-    Pokemon.create(name: name, number: number)
+    pokemon_json =  PokemonUpdateJob.request_pokemon_info(number)
+    PokemonUpdateJob.handle_pokemon_add(number, pokemon_json)
   end
 
-  def request_pokemon_info(number)
+  def self.handle_pokemon_add(number, pokemon_json)
+    name = pokemon_json['name'].capitalize
+    types = []
+    pokemon_json['types'].each { |type_json|
+      type_name = type_json['type']['name']
+      types.append(Type.where('lower(name) = ?', type_name.downcase).first)
+    }
+    Pokemon.create(name: name, number: number, types: types)
+  end
+
+  def self.request_pokemon_info(number)
     uri = URI.parse(POKEMON_ROOT + number.to_s + '/')
     Net::HTTP.start(uri.host, uri.port, :use_ssl => true) do |http|
       request = Net::HTTP::Get.new uri

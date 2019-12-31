@@ -14,7 +14,6 @@ hint: this app is basically useless in its current form :)
 
 ## TODO
 
-* Add a job (populate db)
 * Create an API, return pokemon filtered by type
 
 ## License
