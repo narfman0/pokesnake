@@ -19,6 +19,6 @@ hint: this app is basically useless in its current form :)
 
 ## License
 
-Please see LICENSE for associated license.
+Copyright (C) 2019 Jon Robison
 
-Copyright 2019 Jon Robison All Rights Reserved
+Please see LICENSE file for project license info.
