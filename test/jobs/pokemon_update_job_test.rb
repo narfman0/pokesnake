@@ -5,15 +5,19 @@ require 'test_helper'
 
 class PokemonUpdateJobTest < ActiveJob::TestCase
   test '#perform_now' do
-    # note: do not run this in every test, but leaving it as optional for
-    # manual debugging.
-    # PokemonUpdateJob.perform_now
-    assert true
+    skip 'This makes a network call, skip unless manually debugging'
+    PokemonUpdateJob.perform_now
   end
 
   test '#handle_pokemon_add next' do
     pokemon_json = JSON.parse(file_fixture('pokeapiSquirtle.json').read)
     PokemonUpdateJob.handle_pokemon_add(7, pokemon_json)
-    assert true
+  end
+
+  test '#request_pokemon_info invalid' do
+    skip 'This makes a network call, skip unless manually debugging'
+    assert_raises Exception do
+      PokemonUpdateJob.request_pokemon_info(99_999)
+    end
   end
 end

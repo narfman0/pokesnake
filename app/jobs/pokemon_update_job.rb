@@ -11,7 +11,7 @@ class PokemonUpdateJob < ApplicationJob
 
   def perform(*_args)
     number = Pokemon.count + 1
-    pokemon_json =  PokemonUpdateJob.request_pokemon_info(number)
+    pokemon_json = PokemonUpdateJob.request_pokemon_info(number)
     PokemonUpdateJob.handle_pokemon_add(number, pokemon_json)
   end
 
@@ -30,6 +30,8 @@ class PokemonUpdateJob < ApplicationJob
     Net::HTTP.start(uri.host, uri.port, :use_ssl => true) do |http|
       request = Net::HTTP::Get.new uri
       response = http.request request
+      raise 'Pokemon not found' if response.code.to_i == 404
+
       return JSON.parse(response.body)
     end
   end
