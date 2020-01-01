@@ -18,12 +18,15 @@ class PokemonUpdateJob < ApplicationJob
 
   def self.handle_pokemon_add(number, pokemon_json)
     name = pokemon_json['name'].capitalize
+    height = pokemon_json['height'].to_i
+    weight = pokemon_json['weight'].to_i
     types = []
     pokemon_json['types'].each do |type_json|
       type_name = type_json['type']['name']
       types.append(Type.where('lower(name) = ?', type_name.downcase).first)
     end
-    Pokemon.create(name: name, number: number, types: types)
+    Pokemon.create(name: name, number: number, types: types,
+                   height: height, weight: weight)
   end
 
   def self.request_pokemon_info(number)

@@ -26,6 +26,16 @@
     <%= form.text_area :number %>
   </p>
 
+  <p>
+    <%= form.label :height %><br>
+    <%= form.text_area :height %>
+  </p>
+
+  <p>
+    <%= form.label :weight %><br>
+    <%= form.text_area :weight %>
+  </p>
+
   <%= form.collection_check_boxes :types, Type.all, :id, :name %>
 
   <p>

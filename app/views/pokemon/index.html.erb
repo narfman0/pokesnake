@@ -5,6 +5,8 @@
     <th>Name</th>
     <th>Number</th>
     <th>Types</th>
+    <th>Height</th>
+    <th>Weight</th>
   </tr>
 
   <% @pokemon.each do |pokemon| %>
@@ -16,6 +18,8 @@
         <%= type.name  =%>
       <% end %>
       </td>
+      <td><%= pokemon.height %></td>
+      <td><%= pokemon.weight %></td>
       <td><%= link_to 'Show', pokemon_path(pokemon) %></td>
       <td><%= link_to 'Edit', edit_pokemon_path(pokemon) %></td>
       <td><%= link_to 'Destroy', pokemon_path(pokemon),

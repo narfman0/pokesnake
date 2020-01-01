@@ -15,5 +15,15 @@
   <% end %>
 </p>
 
+<p>
+  <strong>Height:</strong>
+  <%= @pokemon.height %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @pokemon.weight %>
+</p>
+
 <%= link_to 'Edit', edit_pokemon_path(@pokemon) %> |
 <%= link_to 'Back', pokemon_index_path %>
